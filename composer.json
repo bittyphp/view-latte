@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "bittyphp/bitty-view": "^2.0",
+        "bittyphp/view": "^2.0",
         "latte/latte": "^2.4"
     },
     "require-dev": {
