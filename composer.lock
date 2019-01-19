@@ -4,26 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0af8f78885c8e9ab49949b2d452dbec6",
+    "content-hash": "6d763b0d657609feb5b95790988b2dd0",
     "packages": [
         {
-            "name": "bittyphp/bitty-collection",
-            "version": "v1.0.0",
+            "name": "bittyphp/collection",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bittyphp/bitty-collection.git",
-                "reference": "1503d9e6375214ccfa7972da39265e86d206a9fe"
+                "url": "https://github.com/bittyphp/collection.git",
+                "reference": "50ccefc1a449ce5acbe54da2d128646de2fb3d7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bittyphp/bitty-collection/zipball/1503d9e6375214ccfa7972da39265e86d206a9fe",
-                "reference": "1503d9e6375214ccfa7972da39265e86d206a9fe",
+                "url": "https://api.github.com/repos/bittyphp/collection/zipball/50ccefc1a449ce5acbe54da2d128646de2fb3d7c",
+                "reference": "50ccefc1a449ce5acbe54da2d128646de2fb3d7c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0"
             },
             "require-dev": {
+                "codacy/coverage": "^1.4",
                 "jakub-onderka/php-parallel-lint": "^1.0",
                 "localheinz/composer-normalize": "^1.1",
                 "phing/phing": "^2.16",
@@ -51,29 +52,30 @@
                 }
             ],
             "description": "Simple collections.",
-            "time": "2019-01-05T19:56:12+00:00"
+            "time": "2019-01-19T20:42:15+00:00"
         },
         {
-            "name": "bittyphp/bitty-http",
-            "version": "v2.0.2",
+            "name": "bittyphp/http",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bittyphp/bitty-http.git",
-                "reference": "84ed379e074249b0b726e8ee90d166f756873b95"
+                "url": "https://github.com/bittyphp/http.git",
+                "reference": "be2faba3bcdea28db58d916be9aebc19454456d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bittyphp/bitty-http/zipball/84ed379e074249b0b726e8ee90d166f756873b95",
-                "reference": "84ed379e074249b0b726e8ee90d166f756873b95",
+                "url": "https://api.github.com/repos/bittyphp/http/zipball/be2faba3bcdea28db58d916be9aebc19454456d5",
+                "reference": "be2faba3bcdea28db58d916be9aebc19454456d5",
                 "shasum": ""
             },
             "require": {
-                "bittyphp/bitty-collection": "^1.0",
+                "bittyphp/collection": "^1.0",
                 "php": ">=7.1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
+                "codacy/coverage": "^1.4",
                 "jakub-onderka/php-parallel-lint": "^1.0",
                 "localheinz/composer-normalize": "^1.1",
                 "phing/phing": "^2.16",
@@ -101,28 +103,29 @@
                 }
             ],
             "description": "PSR-7 and PSR-17 HTTP implementation.",
-            "time": "2019-01-06T03:42:19+00:00"
+            "time": "2019-01-19T21:12:55+00:00"
         },
         {
-            "name": "bittyphp/bitty-view",
-            "version": "v2.0.2",
+            "name": "bittyphp/view",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bittyphp/bitty-view.git",
-                "reference": "68536fce77efc897e100c587a73a3d1c492afd2f"
+                "url": "https://github.com/bittyphp/view.git",
+                "reference": "4d4c74d4bae7292e553a4aeadc2fe113d57f49ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bittyphp/bitty-view/zipball/68536fce77efc897e100c587a73a3d1c492afd2f",
-                "reference": "68536fce77efc897e100c587a73a3d1c492afd2f",
+                "url": "https://api.github.com/repos/bittyphp/view/zipball/4d4c74d4bae7292e553a4aeadc2fe113d57f49ae",
+                "reference": "4d4c74d4bae7292e553a4aeadc2fe113d57f49ae",
                 "shasum": ""
             },
             "require": {
-                "bittyphp/bitty-http": "^2.0",
+                "bittyphp/http": "^2.0",
                 "php": ">=7.1.0",
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
+                "codacy/coverage": "^1.4",
                 "jakub-onderka/php-parallel-lint": "^1.0",
                 "localheinz/composer-normalize": "^1.1",
                 "phing/phing": "^2.16",
@@ -150,7 +153,7 @@
                 }
             ],
             "description": "Abstract view layer for Bitty.",
-            "time": "2019-01-05T22:25:23+00:00"
+            "time": "2019-01-19T21:25:52+00:00"
         },
         {
             "name": "latte/latte",
