@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bittyphp/view-latte.svg?branch=master)](https://travis-ci.org/bittyphp/view-latte)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/6b7785db455a42f39fde71b2c47ed6bb)](https://www.codacy.com/app/bittyphp/view-latte)
+[![PHPStan Enabled](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/bittyphp/view-latte/downloads)](https://packagist.org/packages/bittyphp/view-latte)
 [![License](https://poser.pugx.org/bittyphp/view-latte/license)](https://packagist.org/packages/bittyphp/view-latte)
 
