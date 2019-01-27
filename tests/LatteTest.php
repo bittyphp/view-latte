@@ -41,7 +41,7 @@ class LatteTest extends TestCase
                 ]
             );
         } catch (\Exception $e) {
-            self::fail();
+            self::fail($e->getMessage());
         }
 
         self::assertTrue(true);
@@ -112,7 +112,7 @@ class LatteTest extends TestCase
             $this->fixture->addFilter(null, function () {
             });
         } catch (\Exception $e) {
-            self::fail();
+            self::fail($e->getMessage());
         }
 
         self::assertTrue(true);
