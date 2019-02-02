@@ -8,6 +8,8 @@ use Latte\Engine;
 use Latte\ILoader;
 use Latte\IMacro;
 use Latte\Loaders\FileLoader;
+use org\bovigo\vfs\vfsStream;
+use org\bovigo\vfs\vfsStreamDirectory;
 use PHPUnit\Framework\TestCase;
 
 class LatteTest extends TestCase
@@ -17,16 +19,43 @@ class LatteTest extends TestCase
      */
     protected $fixture = null;
 
+    /**
+     * @var vfsStreamDirectory
+     */
+    protected $root = null;
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->fixture = new Latte(__DIR__.'/templates/');
+        $this->root = vfsStream::setup();
+
+        $this->fixture = new Latte(
+            __DIR__.'/templates/',
+            ['cacheDir' => $this->root->url()]
+        );
     }
 
     public function testInstanceOf(): void
     {
         self::assertInstanceOf(AbstractView::class, $this->fixture);
+    }
+
+    public function testCacheDir(): void
+    {
+        $path = uniqid();
+        $dir  = $this->root->url().'/'.$path;
+
+        $this->fixture = new Latte(
+            __DIR__.'/templates',
+            ['cacheDir' => $dir]
+        );
+
+        $this->fixture->render('test.latte', ['name' => uniqid()]);
+
+        $actual = array_diff(scandir($dir) ?: [], ['..', '.']);
+
+        self::assertNotEmpty($actual);
     }
 
     public function testOptions(): void
@@ -35,7 +64,7 @@ class LatteTest extends TestCase
             new Latte(
                 uniqid(),
                 [
-                    'refresh' => (bool) rand(0, 1),
+                    'refresh' => rand(0, 1),
                     'cacheDir' => uniqid(),
                     'contentType' => uniqid(),
                 ]
@@ -45,6 +74,16 @@ class LatteTest extends TestCase
         }
 
         self::assertTrue(true);
+    }
+
+    public function testInvalidOption(): void
+    {
+        $name = uniqid();
+
+        self::expectException(\InvalidArgumentException::class);
+        self::expectExceptionMessage('Invalid option "'.$name.'" given.');
+
+        new Latte(uniqid(), [$name => uniqid()]);
     }
 
     /**

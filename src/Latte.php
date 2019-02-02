@@ -32,16 +32,23 @@ class Latte extends AbstractView
         $this->engine = new Engine();
         $this->engine->setLoader(new FileLoader($path));
 
-        if (!empty($options['cacheDir'])) {
-            $this->engine->setTempDirectory($options['cacheDir']);
-        } else {
-            $this->engine->setTempDirectory(sys_get_temp_dir());
-        }
-        if (isset($options['refresh'])) {
-            $this->engine->setAutoRefresh((bool) $options['refresh']);
-        }
-        if (!empty($options['contentType'])) {
-            $this->engine->setContentType($options['contentType']);
+        $optionMap = [
+            'cacheDir' => 'setTempDirectory',
+            'refresh' => 'setAutoRefresh',
+            'contentType' => 'setContentType',
+        ];
+
+        foreach ($options as $name => $value) {
+            if (!isset($optionMap[$name])) {
+                throw new \InvalidArgumentException(
+                    sprintf('Invalid option "%s" given.', $name)
+                );
+            }
+
+            /** @var callable */
+            $callable = [$this->engine, $optionMap[$name]];
+
+            call_user_func($callable, $value);
         }
     }
 
