@@ -21,7 +21,7 @@ class Latte extends AbstractView
     /**
      * @var Engine
      */
-    protected $engine = null;
+    private $engine = null;
 
     /**
      * @param string $path

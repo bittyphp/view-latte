@@ -17,12 +17,12 @@ class LatteTest extends TestCase
     /**
      * @var Latte
      */
-    protected $fixture = null;
+    private $fixture = null;
 
     /**
      * @var vfsStreamDirectory
      */
-    protected $root = null;
+    private $root = null;
 
     protected function setUp(): void
     {
