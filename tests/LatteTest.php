@@ -69,7 +69,7 @@ class LatteTest extends TestCase
                     'contentType' => uniqid(),
                 ]
             );
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             self::fail($e->getMessage());
         }
 
@@ -88,7 +88,7 @@ class LatteTest extends TestCase
 
     /**
      * @param string $template
-     * @param array $data
+     * @param mixed[] $data
      * @param string $expected
      *
      * @dataProvider sampleRender
@@ -148,9 +148,9 @@ class LatteTest extends TestCase
     public function testAddNullFilter(): void
     {
         try {
-            $this->fixture->addFilter(null, function () {
+            $this->fixture->addFilter(null, function (): void {
             });
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             self::fail($e->getMessage());
         }
 

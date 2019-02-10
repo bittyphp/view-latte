@@ -45,7 +45,7 @@ class Latte extends AbstractView
                 );
             }
 
-            /** @var callable */
+            /** @var callable $callable */
             $callable = [$this->engine, $optionMap[$name]];
 
             call_user_func($callable, $value);
@@ -65,7 +65,7 @@ class Latte extends AbstractView
      *
      * @param string $template Template to render.
      * @param string $block Name of block in the template.
-     * @param array $data Data to pass to template.
+     * @param mixed[] $data Data to pass to template.
      *
      * @return string
      */
